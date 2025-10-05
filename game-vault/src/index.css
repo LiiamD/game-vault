@@ -1,0 +1,390 @@
+@import "tailwindcss";
+@import "flowbite";
+/* Déclaration des fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..1000;1,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layer components avec Tailwind */
+
+
+
+ h1 {
+  color: #ffffff; /* text-red-400 */
+  margin-top: 30px; /* mt-[50px] */
+  font-size: 4em; /* taille personnalisée */
+  font-weight: 900; /* équivalent font-black */
+  
+}
+
+h2 {
+    @apply mb-12 text-white;
+    font-weight: 700;
+    font-size: 2em;;
+    position: relative;
+  }
+
+
+h3 {
+    @apply  text-white;
+    font-weight: 200;
+    font-size: 2em;;
+    text-align: left;
+  }
+
+  .arrow {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  margin-top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  
+  animation: bounce 1.5s infinite; /* va-et-vient */
+  transition: opacity 0.5s ease;   /* fondu progressif */
+  opacity: 0.8;
+}
+
+/* Animation haut-bas */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Classe qui cache l’arrow */
+.arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+/* Layer */
+@layer base {
+
+* {
+  
+  box-sizing: border-box;
+
+}
+
+/*#030014*/
+ body {
+  @apply flex items-center justify-center;
+  font-family: 'Montserrat', sans-serif;
+  background: #1b1b1b;
+  
+}
+
+#vg-img-bg {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
+header {
+  @apply relative z-10 flex flex-col items-center justify-center my-[190px] text-center;
+}
+
+}
+/*#1f197f */
+
+
+@layer components {
+
+  /* Header */
+  .search {
+  @apply flex items-center space-x-2 relative rounded-4xl mt-2 mb-16 w-fit mx-auto;
+}
+
+
+  input {
+    @apply border-0 bg-transparent outline-none w-[0] pl-14 pt-4 pb-4 text-white rounded-4xl;
+        background: linear-gradient(to right, #a78bfa, #3b82f6);
+        font-size: 1.2em;
+        opacity: 0;
+        transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        cursor: pointer;
+  }
+
+  .search input::placeholder {
+  @apply text-amber-200
+}
+
+/*affiche la barre search quand on clique*/
+
+  .search input:focus {
+      width: 380px;
+      opacity: 1;
+  }
+
+  .search svg {
+    @apply absolute m-2.5 fill-white w-10;
+    pointer-events: none;
+  }
+
+  .spinner {
+    @apply flex justify-center mt-10;
+  }
+  
+
+  .search input:focus {
+  @apply ring-0 shadow-none;
+}
+
+.suggestions {
+  @apply text-amber-50;
+}
+
+
+/* Trending */
+
+.trending {
+  @apply mb-30;
+}
+
+.trending-list {
+  @apply flex flex-row justify-center space-x-9 mt-[30px];
+}
+
+.trending-list li {
+  @apply flex-shrink-0 rounded-4xl relative;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+  
+}
+
+
+.trending-list img {
+  @apply rounded-4xl w-75 h-100 object-cover;
+  
+}
+
+.trending-list li:hover {
+  box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+transform: scale(1.2);
+}
+
+.rank {
+  @apply text-9xl font-black absolute text-white z-1;
+ text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+ opacity: 1;
+ transition: 0.5s ease-in-out;
+}
+
+.game-search {
+  @apply absolute rounded-4xl inset-0 flex flex-col items-center justify-center text-center  text-white font-semibold;
+  background: linear-gradient(rgba(79,70,229,0.4), #3b82f6);
+  height: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.trending-list li:hover .game-search {
+  height: 100%;
+  opacity: 1;
+}
+
+.trending-list li:hover .rank {
+  opacity: 0;
+}
+
+
+
+
+/* All Games*/
+
+ 
+
+  .games-list {
+    @apply grid grid-cols-4 gap-10 mx-30 m-[30px];
+    
+  }
+  
+
+ .game-card {
+  @apply relative p-[10px] rounded-3xl text-white flex flex-col h-full
+         bg-white/10 backdrop-blur-lg 
+         border border-white/20 shadow-lg;
+  transition: 0.5s ease-in-out;
+  
+
+}
+
+.game-card:hover{
+  transform: scale(1.1);
+  
+}
+
+.game-card:hover .platform{
+  opacity: 1;
+  height: 100%;
+}
+
+
+.platform {
+  @apply absolute inset-0 flex flex-col items-center justify-center text-center rounded-2xl;
+  background: linear-gradient(rgba(79,70,229,0.4), #3b82f6);
+  height: 0;
+  top: 10;
+  width: 100%;
+  overflow: hidden;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  
+  opacity: 0;
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+ .container {
+    @apply mt-[4px];
+    
+  }
+
+.genres {
+  @apply text-gray-500 font-semibold mt-auto text-right; 
+}
+
+.link-icon {
+  @apply w-5 fill-white;
+}
+
+  .game-card > img {
+    @apply rounded-2xl h-75 w-full object-cover;
+    
+  }
+
+   .link-anchor {
+    @apply flex flex-row text-white mt-10 gap-2;
+   }
+
+ 
+
+  .content {
+    @apply flex flex-row space-x-2 mt-[6px];
+  }
+
+  .rating {
+    @apply flex flex-row space-x-2;
+  }
+
+
+
+
+}
+
+
+/* 🎨 Utilitaires */
+@layer utilities {
+
+  .text-gradient {
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+
+  .hide-scrollbar {
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 640px) {
+
+
+  body {
+    @apply bg-amber-400;
+  }
+      header {
+    @apply my-[60px];
+  }
+
+  header img {
+    @apply w-3xs;
+  }
+
+  .arrow {
+    @apply mt-20;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-top: 30px;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+
+   .trending-list {
+  @apply flex flex-row justify-center items-start  bg-amber-400;
+  
+}
+
+  .games-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .game-card {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+   @apply my-[80px];
+    padding: 0 1rem;
+  }
+
+  header img {
+    @apply w-[280px];
+  }
+
+.arrow {
+  @apply mt-[10px];
+}
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .games-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+ .trending-list {
+  @apply flex space-x-4 pb-4;
+  
+}
+
+
+
+
+  .search input:focus {
+    width: 90vw;
+  }
+
+}
