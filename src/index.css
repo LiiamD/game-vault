@@ -91,7 +91,7 @@ h3 {
 }
 
 header {
-  @apply relative z-10 flex flex-col items-center justify-center my-[190px] text-center;
+  @apply relative z-10 flex flex-col items-center justify-center my-[150px] text-center;
 }
 
 }
@@ -307,9 +307,7 @@ transform: scale(1.2);
 @media only screen and (max-width: 640px) {
 
 
-  body {
-    @apply bg-amber-400;
-  }
+  
       header {
     @apply my-[60px];
   }
