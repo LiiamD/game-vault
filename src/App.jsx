@@ -177,11 +177,11 @@ useEffect(() => {
     <main>
       <div className="pattern" />
       <div className="wrapper">
-        <img id="vg-img-bg" src="./bg_v2.png" alt="background"/>
+        <img id="vg-img-bg" src="public/bg_v2.png" alt="background"/>
 
         <header>
          
-          <img id="vg-img-banner" src="./logo_v1.png" alt="header"/>
+          <img id="vg-img-banner" src="public/logo_v1.png" alt="header"/>
           <h1>Explore <span className="text-gradient">games</span>,<br/> find your favorites</h1>
           
 
