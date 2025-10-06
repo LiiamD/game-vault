@@ -30,6 +30,6 @@ Game Vault est une application web développée en **React 19** avec **Vite**. E
 
 Le projet est déployé sur GitHub Pages :
 
-[https://x.github.io/game-vault/](https://x.github.io/game-vault/)
+[https://liiamd.github.io/game-vault/](https://liiamd.github.io/game-vault/)
 
 
