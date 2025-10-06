@@ -1,16 +1,35 @@
-# React + Vite
+# Game Vault
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Game Vault est une application web développée en **React 19** avec **Vite**. Elle permet de :
 
-Currently, two official plugins are available:
+- 🎮 Découvrir des jeux tendances grâce à l'API **RAWG**.
+- 🔍 Rechercher des titres et obtenir leurs informations détaillées.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔧 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Front-end** : React 19, TailwindCSS
+- **Back-end** : Appwrite (open-source)
+- **API** : RAWG API pour récupérer les informations des jeux
+- **Outils** : Vite pour le build, gh-pages pour le déploiement
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Fonctionnalités
+
+- Affiche les **jeux populaires** par défaut.
+- Barre de recherche avec **suggestions automatiques**.
+- Délais de recherche avec **debounce** pour optimiser les appels API.
+- Section **Trending Games** pour les recherches les plus populaires.
+- Suivi des recherches pour analyser l’usage et améliorer l’expérience utilisateur.
+
+---
+
+## 🌐 Démo en ligne
+
+Le projet est déployé sur GitHub Pages :
+
+[https://x.github.io/game-vault/](https://x.github.io/game-vault/)
+
+
