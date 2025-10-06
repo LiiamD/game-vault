@@ -6,9 +6,6 @@ import GameCard from './components/GameCard';
 import { getTrendingGames, updateSearchCount } from './appwrite';
 
 
-
-
-
 const API_BASE_URL = 'https://api.rawg.io/api/games';
 
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
@@ -177,11 +174,11 @@ useEffect(() => {
     <main>
       <div className="pattern" />
       <div className="wrapper">
-        <img id="vg-img-bg" src="./bg_v2.png" alt="Background VideoGames"/>
+        <img id="vg-img-bg" src={`${import.meta.env.BASE_URL}bg_v2.png`} alt="Background VideoGames"/>
 
         <header>
          
-          <img id="vg-img-banner" src="./logo_v1.png" alt="Header Logo"/>
+          <img id="vg-img-banner" src={`${import.meta.env.BASE_URL}logo_v1.png`} alt="Header Logo"/>
           <h1>Explore <span className="text-gradient">games</span>,<br/> find your favorites</h1>
           
 
