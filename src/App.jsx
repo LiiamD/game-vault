@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import 'src/App.css';
-import Search from 'src/components/Search';
-import Spinner from 'src/components/Spinner';
-import GameCard from 'src/components/GameCard';
-import { getTrendingGames, updateSearchCount } from 'src/appwrite';
+import './App.css';
+import Search from './components/Search';
+import Spinner from './components/Spinner';
+import GameCard from './components/GameCard';
+import { getTrendingGames, updateSearchCount } from './appwrite';
 
 
 
